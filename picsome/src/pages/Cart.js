@@ -25,17 +25,26 @@ function Cart() {
             <h1>Check out</h1>
             {cartItemElements}
             <p className="total-cost">Total: {totalPrice}</p>
-            <div className="order-button">
-                <button onClick={() => placeOrder()}>{order}</button>
-            </div>
+            {
+                cartItems.length > 0 ?
+                <div className="order-button">
+                    <button onClick={() => placeOrder()}>{order}</button>
+                </div> : 
+                <p>You have no items in your cart.</p>
+            }
         </main>
     )
 }
 
 export default Cart
 
-// Clicking the "Place Order" button should:
-// 1. Change the text to "Ordering..."
-// 2. Timeout for 3 seconds (to simulate an order being placed)
-// 3. Log "Order placed!" to the console
-// 4. Empty out the cart
+// # Challenge
+
+
+// 2. Change the trash icon to a filled-in trash icon when hovering over it
+
+// Filled trash icon to use when hovering:
+// <i className="ri-delete-bin-fill"></i>
+
+// Empty trash icon to use when NOT hovering:
+// <i className="ri-delete-bin-line"></i>
